@@ -25,7 +25,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.Title := 'Delphi / C#Builder Setting Manager (beta)';
+  Application.Title := 'Delphi Setting Manager';
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.
