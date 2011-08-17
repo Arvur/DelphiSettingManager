@@ -1,0 +1,154 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{E3426579-3952-4684-88CE-53B7168E5740}</ProjectGuid>
+			<MainSource>DelphiSettingManager.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<ProjectVersion>12.3</ProjectVersion>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vcl;rtl;vclx;indy;vclie;xmlrtl;inetdbbde;inet;inetdbxpress;dbrtl;soaprtl;dsnap;VclSmp;dbexpress;vcldb;dbxcds;inetdb;bdertl;vcldbx;adortl;teeui;teedb;tee;ibxpress;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP;CodelineUtilities</DCC_UsePackage>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_ExeOutput>Bin</DCC_ExeOutput>
+			<DCC_K>false</DCC_K>
+			<DCC_N>true</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_DcuOutput>DCU</DCC_DcuOutput>
+			<DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+			<DCC_E>false</DCC_E>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="DelphiSettingManager.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="Source\fMain.pas">
+				<Form>frmMain</Form>
+			</DCCReference>
+			<DCCReference Include="Source\ShellUtilities.pas"/>
+			<DCCReference Include="Source\SettingCollection.pas"/>
+			<DCCReference Include="Source\frmSetting.pas">
+				<Form>frmSettingList</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Source\fNewSetting.pas">
+				<Form>frmNewSetting</Form>
+			</DCCReference>
+			<DCCReference Include="Source\fRenameSetting.pas">
+				<Form>frmRenameSetting</Form>
+			</DCCReference>
+			<DCCReference Include="Source\LoadSaveCustomSetting.pas"/>
+			<DCCReference Include="Source\fAbout.pas">
+				<Form>frmAbout</Form>
+			</DCCReference>
+			<DCCReference Include="Source\DelphiSettingRegistry.pas"/>
+			<DCCReference Include="Source\TreeViewController.pas"/>
+			<DCCReference Include="Source\fEditSetting.pas">
+				<Form>frmEditSetting</Form>
+			</DCCReference>
+			<DCCReference Include="Source\ValueNamesProvider.pas"/>
+			<DCCReference Include="Design Patterns\IntfObserver.pas"/>
+			<DCCReference Include="Design Patterns\Subject.pas"/>
+			<DCCReference Include="Source\SettingPersistent.pas"/>
+			<DCCReference Include="Source\SettingTemplate.pas"/>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ItemGroup>
+			<Reference Include="$(SystemRoot)\microsoft.net\framework\v1.1.4322\system.drawing.dll">
+				<ContainerId>DelphiDotNetAssemblyCompiler</ContainerId>
+				<AssemblyName/>
+				<HintPath>$(SystemRoot)\microsoft.net\framework\v1.1.4322\system.drawing.dll</HintPath>
+				<AssemblyTag>$(SystemRoot)\microsoft.net\framework\v1.1.4322\system.drawing.dll</AssemblyTag>
+			</Reference>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">DelphiSettingManager.dpr</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">2</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Codeline</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Delphi / C#Builder Setting Manager</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.2.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Delphi Setting Manager</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Copyright Ã‚Â© Erwien Saputra 2005</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">Delphi / C# Builder Setting Manager</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.2.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+						<VersionInfoKeys Name="Last Compile">2011-08-15 17:45</VersionInfoKeys>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclnet90.bpl">(Untitled)</Excluded_Packages>
+						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclsoap90.bpl">(Untitled)</Excluded_Packages>
+						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dbwebxprt.bpl">(Untitled)</Excluded_Packages>
+						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclie90.bpl">(Untitled)</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
