@@ -53,19 +53,9 @@ type
     CreateShortcut1: TMenuItem;
     RunDelphi1: TMenuItem;
     pcInstalledIDE: TPageControl;
-    tbDelphi6: TTabSheet;
-    tbDelphi7: TTabSheet;
-    tbBDS1: TTabSheet;
-    tbBDS2: TTabSheet;
-    frmDelphi6: TfrmSettingList;
-    frmDelphi7: TfrmSettingList;
-    frmBDS1: TfrmSettingList;
-    frmBDS2: TfrmSettingList;
     btnCreateShortcut: TBitBtn;
     btnClose: TBitBtn;
     dlgSave: TSaveDialog;
-    tbBDS3: TTabSheet;
-    frmBDS3: TfrmSettingList;
     btnRunDelphi: TBitBtn;
     ActionList: TActionList;
     actFileExit: TFileExit;
@@ -99,6 +89,7 @@ type
     { Private declarations }
     FSettingManagerForm : TSettingManagerForm;
     function CurrentFrame : TfrmSettingList;
+    procedure CreateTabs;
     procedure LoadTabs;
     procedure SetTab (const IDE : TIDEVersion; const IDEInstalled : boolean);
     //IMainFormProperties
@@ -135,12 +126,6 @@ implementation
 uses ShellUtilities, LoadSaveCustomSetting, fAbout, SettingTemplate;
 
 const
-  //The constant value for the Page Control tab index for each IDE.
-  DELPHI6_TAB = 0;
-  DELPHI7_TAB = 1;
-  BDS1_TAB    = 2;
-  BDS2_TAB    = 3;
-  BDS3_TAB    = 4;
   //Error message if no IDE is installed in the system.
   ERR_NO_SUPPORTED_IDE = 'There is no supported Borland IDE installed in this machine. ' +
                          '(Delphi 6, Delphi 7, C#Builder, Delphi 8).';
@@ -154,6 +139,29 @@ const
 {$R *.dfm}
 
 { TForm1 }
+
+// Dynamically creating tabs for all IDEs
+procedure TfrmMain.CreateTabs;
+var
+  IDELoop  : TIDEVersion;
+  newTab   : TTabSheet;
+  newFrame : TfrmSettingList;
+begin
+  for IDELoop := Low(TIDEVersion) to High(TIDEVersion) do begin
+    try
+      newTab             := TTabSheet.Create(Self);
+      newTab.Caption     := IDEParams[IDELoop].DisplayName;
+      newTab.Name        := 'tab_' + IDEParams[IDELoop].ShortName;
+      newTab.PageControl := pcInstalledIDE;
+      newFrame        := TfrmSettingList.Create(Self);
+      newFrame.Name   := 'frm_' + IDEParams[IDELoop].ShortName;
+      newFrame.Parent := newTab;
+      newFrame.Align  := alClient;
+    except
+      FreeAndNil(newTab);
+    end;
+  end;
+end;
 
 //Retrieve a set of installed Delphi IDEs and then for each IDE version, set the
 //correspoinding Tab Sheet.  The TabSheet which has no corresponding IDE will be
@@ -198,30 +206,8 @@ var
   Frame : TfrmSettingList;
 begin
   //Based on the IDE, get the corresponding Tab and Frame.
-  case IDE of
-    Delphi6 : begin
-                Tab   := tbDelphi6;
-                Frame := frmDelphi6;
-              end;
-    Delphi7 : begin
-                Tab   := tbDelphi7;
-                Frame := frmDelphi7;
-              end;
-    BDS1    : begin
-                Tab   := tbBDS1;
-                Frame := frmBDS1;
-              end;
-    BDS2    : begin
-                Tab   := tbBDS2;
-                Frame := frmBDS2;
-              end;
-    BDS3    : begin
-                Tab   := tbBDS3;
-                Frame := frmBDS3;
-              end;
-  else
-    raise Exception.Create ('Unknown constant.');
-  end;
+  Tab := TTabSheet(Self.FindComponent('tab_' + IDEParams[IDE].ShortName));
+  Frame := TfrmSettingList(Self.FindComponent('frm_' + IDEParams[IDE].ShortName));
 
   //Disable or set the tab invisible if corresponding IDE is not installed.
   Tab.Visible    := IDEInstalled;
@@ -234,17 +220,12 @@ end;
 
 //Returns the TfrmSettingList of the active frame.
 function TfrmMain.CurrentFrame: TfrmSettingList;
+var
+  frmName: string;
 begin
   //Return TfrmSettingLIst based on the index of the current page.
-  case pcInstalledIDE.ActivePageIndex of
-    DELPHI6_TAB : Result := frmDelphi6;
-    DELPHI7_TAB : Result := frmDelphi7;
-    BDS1_TAB    : Result := frmBDS1;
-    BDS2_TAB    : Result := frmBDS2;
-    BDS3_TAB    : Result := frmBDS3;
-  else
-    Result := nil;
-  end;
+  frmName := StringReplace(pcInstalledIDE.ActivePage.Name, 'tab_', 'frm_', []);
+  Result := TfrmSettingList(Self.FindComponent(frmName));
 end;
 
 //If CurrentFrame is a valid Frame and there is a selected item, open the file
@@ -378,6 +359,7 @@ end;
 constructor TfrmMain.Create(AOwner: TComponent);
 begin
   inherited;
+  CreateTabs;
   LoadTabs;
 
   FSettingManagerForm := TSettingManagerForm.Create (self);
