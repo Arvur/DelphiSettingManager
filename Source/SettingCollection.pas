@@ -82,6 +82,33 @@ type
   //Set of TIDEVersion, it is returned by GetInstalledIDEVersion.
   TInstalledIDE = set of TIDEVersion;
 
+  TIDEConstants = record
+    // IDE display name for main form
+    DisplayName: string;
+    // Short name used for naming and SettingsRoot
+    ShortName: string;
+    //Registry branch including company name
+    IDERoot: string;
+    //The key of each IDE.
+    RegistryKey: string;
+    //Whenever the IDE is started using -r<RegistryKey> parameter, Delphi/BDS will
+    //create <RegistryKey>\IDE Version, and put all settings under that key, not
+    //directly under the <RegistryKey>.
+    //These constants are useful when the user wants to copy setting from their
+    //existing IDE (the default) to the new custom setting.
+    IDEVersion: string;
+  end;
+
+const
+  IDEParams: array [TIDEVersion] of TIDEConstants = (
+    (DisplayName:    'Delphi 6'; ShortName: 'Delphi6'; IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\6.0\'; IDEVersion: '6.0'),
+    (DisplayName:    'Delphi 7'; ShortName: 'Delphi7'; IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion: '7.0'),
+    (DisplayName:  'C# Builder'; ShortName:    'BDS1'; IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion: '1.0'),
+    (DisplayName:    'Delphi 8'; ShortName:    'BDS2'; IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion: '2.0'),
+    (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0')
+  );
+
+type
   //This interface can be used to manage custom settings for a specific IDS.
   ISettingCollection = interface
   ['{24C9531A-A384-4F28-A35A-62CB058B4FE8}']
@@ -134,34 +161,12 @@ implementation
 uses
   Registry, SysUtils, Windows;
 
-type
-  TIDEConstants = record
-    //Registry branch including company name
-    IDERoot: string;
-    //The key of each IDE.
-    RegistryKey: string;
-    //Whenever the IDE is started using -r<RegistryKey> parameter, Delphi/BDS will
-    //create <RegistryKey>\IDE Version, and put all settings under that key, not
-    //directly under the <RegistryKey>.
-    //These constants are useful when the user wants to copy setting from their
-    //existing IDE (the default) to the new custom setting.
-    IDEVersion: string;
-    //Root for all IDE specific settings.
-    SettingsRoot: string;
-  end;
-
 const
-  IDEParams: array [TIDEVersion] of TIDEConstants = (
-    (IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\6.0\'; IDEVersion: '6.0'; SettingsRoot: 'CustomSettings\Delphi6\'),
-    (IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion: '7.0'; SettingsRoot: 'CustomSettings\Delphi7\'),
-    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion: '1.0'; SettingsRoot: 'CustomSettings\BDS1\'),
-    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion: '2.0'; SettingsRoot: 'CustomSettings\BDS2\'),
-    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0'; SettingsRoot: 'CustomSettings\BDS3\')
-  );
-
   //The value under IDE key that contains the path and the filename of the
   //executable.
   APP_VALUE        = 'App';
+  //Root for all IDE specific settings.
+  SettingsRoot     = 'CustomSettings\';
 
 type
   TSettingCollection = class (TInterfacedObject, ISettingCollection)
@@ -217,7 +222,7 @@ end;
 function GEtCustomSettingKey (const AIDEVersion : TIDEVersion) : string;
 begin
   try
-    Result := IDEParams[AIDEVersion].SettingsRoot;
+    Result := SettingsRoot + IDEParams[AIDEVersion].ShortName + '\';
   except
     raise Exception.Create ('Unknown IDE');
   end;
