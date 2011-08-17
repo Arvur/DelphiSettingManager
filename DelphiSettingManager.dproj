@@ -43,6 +43,8 @@
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_DebugInformation>true</DCC_DebugInformation>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
 			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
@@ -139,10 +141,8 @@
 						<VersionInfoKeys Name="Last Compile">2011-08-15 17:45</VersionInfoKeys>
 					</VersionInfoKeys>
 					<Excluded_Packages>
-						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclnet90.bpl">(Untitled)</Excluded_Packages>
-						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclsoap90.bpl">(Untitled)</Excluded_Packages>
-						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dbwebxprt.bpl">(Untitled)</Excluded_Packages>
-						<Excluded_Packages Name="c:\program files\borland\bds\3.0\Bin\dclie90.bpl">(Untitled)</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
 					</Excluded_Packages>
 				</Delphi.Personality>
 				<Platforms>
