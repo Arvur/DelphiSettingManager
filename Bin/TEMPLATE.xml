@@ -1,0 +1,298 @@
+<ROOT>
+  <DELPHI6/>
+  <DELPHI7>
+    <TEMPLATE name="Barebone IDE">
+      <REG_KEY name="7.0\Known IDE Packages" delete_tree="false" empty_tree="true"/>
+      <REG_KEY name="7.0\Known Packages"     delete_tree="false" empty_tree="true"/>
+    </TEMPLATE>
+  </DELPHI7>
+  <BDS1>
+    <TEMPLATE name="Barebone IDE">
+      <REG_KEY name="1.0\Known IDE Packages"   delete_tree="false" empty_tree="true" />
+      <REG_KEY name="1.0\Known Packages"       delete_tree="false" empty_tree="true" />
+      <REG_KEY name="1.0\Known Assemblies"     delete_tree="false" empty_tree="true" />
+      <REG_KEY name="1.0\Known IDE Assemblies" delete_tree="false" empty_tree="true" />
+    </TEMPLATE>
+  </BDS1>
+  <BDS2>
+    <TEMPLATE name="Barebone IDE">
+      <REG_KEY name="2.0\Known IDE Packages"   delete_tree="false" empty_tree="true" />
+      <REG_KEY name="2.0\Known Packages"       delete_tree="false" empty_tree="true" />
+      <REG_KEY name="2.0\Known Assemblies"     delete_tree="false" empty_tree="true" />
+      <REG_KEY name="2.0\Known IDE Assemblies" delete_tree="false" empty_tree="true" />
+    </TEMPLATE>
+  </BDS2>
+  <BDS3>
+    <TEMPLATE name="Win32">
+      <REG_KEY name="3.0\Known Assemblies" delete_tree="false" empty_tree="true"/>
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="true">
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="true">
+        <ITEM name="$(BDS)\Bin\vclmenudesigner90.bpl"  value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\win32debugproide90.bpl" value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\iteidew3290.bpl"        value="Borland Integrated Translation Environment for Win32"/>
+        <ITEM name="$(BDS)\Bin\todoide90.bpl"          value="Borland ToDo"/>
+        <ITEM name="$(BDS)\Bin\htmlhelp290.bpl"        value="Borland HtmlHelp Viewer"/>
+        <ITEM name="$(BDS)\Bin\idefilefilters90.bpl"   value="IDE File filters"/>
+        <ITEM name="$(BDS)\Bin\startpageide90.bpl"     value="Borland Start Page IDE Package"/>
+        <ITEM name="$(BDS)\Bin\refactoride90.bpl"      value="Borland Core Refactoring Package"/>
+        <ITEM name="$(BDS)\Bin\dbkdebugide90.bpl"      value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\plugview90.bpl"         value="Pluggable Tree View Package"/>
+        <ITEM name="$(BDS)\Bin\asmview90.bpl"          value="Assembly Browser Package"/>
+        <ITEM name="$(BDS)\Bin\coreproide90.bpl"       value="Core IDE Pro Package"/>
+        <ITEM name="$(BDS)\Bin\IDETools90.bpl"         value="Build Tools"/>
+        <ITEM name="$(BDS)\Bin\dbkdebugproide90.bpl"   value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\unittestide90.bpl"      value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\historyide90.bpl"       value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\delphivclide90.bpl"     value="Delphi VCL Designer IDE Package"/>
+        <ITEM name="$(BDS)\Bin\delphicoreproide90.bpl" value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\win32debugide90.bpl"    value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\delphide90.bpl"         value="Delphi Win32 IDE Personality"/>
+        <ITEM name="$(BDS)\Bin\comstd90.bpl"           value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\compro90.bpl"           value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\delphipro90.bpl"        value="(Untitled)"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known Packages" delete_tree="false" empty_tree="true">
+        <ITEM name="$(BDS)\Bin\dcldb90.bpl"            value="Borland Database Components"/>
+        <ITEM name="$(BDS)\Bin\dclstd90.bpl"           value="Borland Standard Components"/>
+        <ITEM name="$(BDS)\Bin\dclado90.bpl"           value="Borland ADO DB Components"/>
+        <ITEM name="$(BDS)\Bin\dcldbx90.bpl"           value="Borland dbExpress Components"/>
+        <ITEM name="$(BDS)\Bin\dclib90.bpl"            value="Borland InterBase Express Components"/>
+        <ITEM name="$(BDS)\Bin\dclIntraweb_72_90.bpl"  value="Intraweb 7.2 Design Package for Delphi Win32"/>
+        <ITEM name="$(BDS)\Bin\dclIndyCore90.bpl"      value="Indy 10 Core Design Time"/>
+        <ITEM name="$(BDS)\Bin\dclofficexp90.bpl"      value="Microsoft Office XP Sample Automation Server Wrapper Components"/>
+        <ITEM name="$(BDS)\Bin\dclsmp90.bpl"           value="Borland Sample Components"/>
+        <ITEM name="$(BDS)\Bin\dclIndyProtocols90.bpl" value="Indy 10 Protocols Design Time"/>
+        <ITEM name="$(BDS)\Bin\dcl31w90.bpl"           value="Delphi 1.0 Compatibility Components"/>
+        <ITEM name="$(BDS)\Bin\ibevnt90.bpl"           value="Borland Interbase Event Alerter Component"/>
+        <ITEM name="$(BDS)\Bin\dclshlctrls90.bpl"      value="Shell Control Property and Component Editors"/>
+        <ITEM name="$(BDS)\Bin\dclmid90.bpl"           value="Borland MyBase DataAccess Components"/>
+        <ITEM name="$(BDS)\Bin\dcltee90.bpl"           value="TeeChart Components"/>
+        <ITEM name="$(BDS)\Bin\dclbde90.bpl"           value="Borland BDE DB Components"/>
+        <ITEM name="$(BDS)\Bin\dbx90.bpl"              value="Borland SQL Explorer UI Package"/>
+        <ITEM name="$(BDS)\Bin\dcldbxcds90.bpl"        value="Borland SimpleDataset Component (DBX)"/>
+        <ITEM name="$(BDS)\Bin\dclact90.bpl"           value="Borland ActionBar Components"/>
+        <ITEM name="$(BDS)\Bin\dclsmpedit90.bpl"       value="Borland Editor Script Enhancements"/>
+        <ITEM name="$(BDS)\Bin\dclemacsedit90.bpl"     value="Borland Editor Emacs Enhancements"/>
+        <ITEM name="$(BDS)\Bin\dclmlwiz90.bpl"         value="Borland Markup Language Wizards"/>
+        <ITEM name="$(BDS)\Bin\applet90.bpl"           value="Borland Control Panel Applet Package"/>
+        <ITEM name="$(BDS)\Bin\dclnet90.bpl"           value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\dclsoap90.bpl"          value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\dbwebxprt.bpl"          value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\dclie90.bpl"            value="(Untitled)"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Personalities" delete_tree="false" empty_tree="true">
+        <ITEM name="default"      value="Borland Delphi 2005"/>
+        <ITEM name="Delphi.Win32" value="Borland Delphi 2005 for Microsoft Windows"/>
+
+        <ITEM name="Delphi.NET" value="Borland Delphi 2005 for the Microsoft .NET Framework" />
+        <ITEM name="C#Builder" value="Borland C#Builder 2005 for the Microsoft .NET Framework"/>
+      </REG_KEY>
+    </TEMPLATE>
+    <TEMPLATE name="C#">
+      <REG_KEY name="3.0\Known Assemblies" delete_tree="false" empty_tree="true"/>
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="true">
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.Together.dll"     value="Borland Together IDE Integration"/> -->
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.StarTeam.dll"     value="(Untitled)"/> -->
+        <ITEM name="$(BDS)\Bin\Borland.CSharp.dll"              value="Borland CSharp Assembly"/>
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Delphi.dll"       value="Borland Delphi for .NET Provider"/>
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.UnitTest.dll"     value="(Untitled)"/> -->
+        <!-- <ITEM name="$(BDS)\bin\Borland.Together.EcoDiagram.dll" value="UML Diagram support for Enterprise Core Objects"/> -->
+        <ITEM name="$(BDS)\Bin\Borland.Studio.TypeMappings.dll" value="Borland Type Mappings"/>
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.Refactoring.dll"  value="Borland Developer Studio Refactoring"/> -->
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="true">
+        <ITEM name="$(BDS)\Bin\aspcside90.bpl"       value="CSharp ASP.NET IDE Package"/>
+        <!-- <ITEM name="$(BDS)\Bin\caliberide90.bpl"     value="(Untitled)"/>  -->
+        <ITEM name="$(BDS)\Bin\NetImportWiz90.bpl"   value="(Untitled)"/>
+        <!-- <ITEM name="$(BDS)\Bin\crystalide90.bpl"     value="Crystal Decisions IDE Package"/>  -->
+        <ITEM name="$(BDS)\Bin\DataExplorer90.bpl"   value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\demeanoride90.bpl"    value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\htmide90.bpl"         value="HTML Designer Package"/>
+        <!-- <ITEM name="$(BDS)\Bin\optimizeitide90.bpl"  value="(Untitled)"/>  -->
+        <ITEM name="$(BDS)\Bin\cside90.bpl"          value="CSharp IDE Personality"/>
+        <ITEM name="$(BDS)\Bin\csinsite90.bpl"       value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\scide90.bpl"          value="Visual Studio Converter IDE Package"/>
+        <ITEM name="$(BDS)\Bin\vbide90.bpl"          value="VB IDE Personality"/>
+        <ITEM name="$(BDS)\Bin\todoide90.bpl"        value="Borland ToDo"/>
+        <ITEM name="$(BDS)\Bin\htmlhelp290.bpl"      value="Borland HtmlHelp Viewer"/>
+        <ITEM name="$(BDS)\Bin\idefilefilters90.bpl" value="IDE File filters"/>
+        <ITEM name="$(BDS)\Bin\startpageide90.bpl"   value="Borland Start Page IDE Package"/>
+        <ITEM name="$(BDS)\Bin\refactoride90.bpl"    value="Borland Core Refactoring Package"/>
+        <ITEM name="$(BDS)\Bin\dbkdebugide90.bpl"    value="(Untitled)"/>
+        <!-- <ITEM name="$(BDS)\Bin\exceptiondiag90.bpl"  value=""/> -->
+        <ITEM name="$(BDS)\Bin\soapide90.bpl"        value="IDE Web Reference Package"/>
+        <ITEM name="$(BDS)\Bin\plugview90.bpl"       value="Pluggable Tree View Package"/>
+        <ITEM name="$(BDS)\Bin\asmview90.bpl"        value="Assembly Browser Package"/>
+        <ITEM name="$(BDS)\Bin\coreproide90.bpl"     value="Core IDE Pro Package"/>
+        <ITEM name="$(BDS)\Bin\IDETools90.bpl"       value="Build Tools"/>
+        <ITEM name="$(BDS)\Bin\dbkdebugproide90.bpl" value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\unittestide90.bpl"    value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\historyide90.bpl"     value="(Untitled)"/>
+        <ITEM name="$(BDS)\Bin\htmltidy90.bpl"       value="HTML Tidy Formatter"/>
+        <ITEM name="$(BDS)\Bin\HTMLFmt90.bpl"        value="HTML Internal Formatter"/>
+        <ITEM name="$(BDS)\Bin\mlcc90.bpl"           value="Markup Language Code Completion Package"/>
+        <!-- <ITEM name="$(BDS)\Bin\TGIDE90.BPL"          value="Borland Together IDE Integration"/> -->
+        <ITEM name="$(BDS)\Bin\dotnetcoreide90.bpl"  value=".NET Core IDE Package"/>
+        <ITEM name="$(BDS)\Bin\dotnetdebugide90.bpl" value="IDE Debugger Package"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known Packages" delete_tree="true" empty_tree="true"/>
+      <REG_KEY name="3.0\Personalities" delete_tree="false" empty_tree="true">
+        <ITEM name="default"   value="Borland Delphi 2005"/>
+        <ITEM name="C#Builder" value="Borland C#Builder 2005 for the Microsoft .NET Framework"/>
+
+        <ITEM name="Delphi.NET" value="Borland Delphi 2005 for the Microsoft .NET Framework" />
+        <ITEM name="Delphi.Win32" value="Borland Delphi 2005 for Microsoft Windows"/>
+      </REG_KEY>
+    </TEMPLATE>
+    <TEMPLATE name="Delphi.Net">
+      <REG_KEY name="3.0\Known Assemblies" delete_tree="false" empty_tree="true">
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.DbxSimpleCtrl.dll"  value="Borland.Vcl.Design.DbxSimpleCtrl" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Samples.dll"               value="Borland.Vcl.Samples" />
+        <ITEM name="$(BDS)\Bin\dclIndyCore.dll"                       value="dclIndyCore" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.Standard.DLL"       value="Borland.Vcl.Design.Standard" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.Windows31.dll"      value="Borland.Vcl.Design.Windows31" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.BdeRtl.dll"         value="Borland.Vcl.Design.BdeRtl" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.ActionBands.dll"    value="Borland.Vcl.Design.ActionBands" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.DbCtrls.dll"        value="Borland.Vcl.Design.DbCtrls" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.IBXpress.dll"       value="Borland.Vcl.Design.IBXpress" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.Xml.dll"            value="Borland.Vcl.Design.Xml" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.DbxCtrls.dll"       value="Borland.Vcl.Design.DbxCtrls" />
+        <ITEM name="$(BDS)\Bin\dclIntraweb_72_90NET.dll"              value="dclIntraweb_72_90NET" />
+        <ITEM name="$(BDS)\Bin\dclIndyProtocols.dll"                  value="dclIndyProtocols" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.DbRtl.DLL"          value="Borland.Vcl.Design.DbRtl" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.AdoDb.dll"          value="Borland.Vcl.Design.AdoDb" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.AdoNet.dll"         value="Borland.Vcl.Design.AdoNet" />
+        <ITEM name="$(BDS)\Bin\Borland.Vcl.Design.MyBase.dll"         value="Borland.Vcl.Design.MyBase" />
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="true">
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.Together.dll"         value="Borland Together IDE Integration" />  -->
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.StarTeam.dll"         value="(Untitled)" />  -->
+        <!-- <ITEM name="$(BDS)\Bin\Borland.CSharp.dll"                  value="Borland CSharp Assembly" />  -->
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Delphi.dll"           value="Borland Delphi for .NET Provider" />
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.UnitTest.dll"         value="(Untitled)" />  -->
+        <!-- <ITEM name="$(BDS)\bin\Borland.Together.EcoDiagram.dll"     value="UML Diagram support for Enterprise Core Objects" />  -->
+        <ITEM name="$(BDS)\Bin\Borland.Studio.TypeMappings.dll"     value="Borland Type Mappings" />
+        <!-- <ITEM name="$(BDS)\Bin\Borland.Studio.Refactoring.dll"      value="Borland Developer Studio Refactoring" />  -->
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Vcl.MenuDesigner.dll" value="Borland VCL Menu Designer for .NET" />
+        <ITEM name="$(BDS)\Bin\dclIntraweb_72_90NET.dll"            value="dclIntraweb_72_90NET.dll" />
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="true">
+        <ITEM name="$(BDS)\Bin\aspdelphiide90.bpl"       value="ASP.NET IDE Package List Manager" />
+        <!-- <ITEM name="$(BDS)\Bin\caliberide90.bpl"         value="(Untitled)" /> -->
+        <ITEM name="$(BDS)\Bin\vclmenudesigner90.bpl"    value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\NetImportWiz90.bpl"       value="(Untitled)" />
+        <!-- <ITEM name="$(BDS)\Bin\crystalide90.bpl"         value="Crystal Decisions IDE Package" /> -->
+        <ITEM name="$(BDS)\Bin\DataExplorer90.bpl"       value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\demeanoride90.bpl"        value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\htmide90.bpl"             value="HTML Designer Package" />
+        <ITEM name="$(BDS)\Bin\iteidenet90.bpl"          value="Borland Integrated Translation Environment for .NET" />
+        <!-- <ITEM name="$(BDS)\Bin\optimizeitide90.bpl"      value="(Untitled)" /> -->
+        <ITEM name="$(BDS)\Bin\todoide90.bpl"            value="Borland ToDo" />
+        <ITEM name="$(BDS)\Bin\htmlhelp290.bpl"          value="Borland HtmlHelp Viewer" />
+        <ITEM name="$(BDS)\Bin\idefilefilters90.bpl"     value="IDE File filters" />
+        <ITEM name="$(BDS)\Bin\startpageide90.bpl"       value="Borland Start Page IDE Package" />
+        <ITEM name="$(BDS)\Bin\refactoride90.bpl"        value="Borland Core Refactoring Package" />
+        <ITEM name="$(BDS)\Bin\dbkdebugide90.bpl"        value="(Untitled)" />
+        <!-- <ITEM name="$(BDS)\Bin\exceptiondiag90.bpl"      value="" /> -->
+        <ITEM name="$(BDS)\Bin\soapide90.bpl"            value="IDE Web Reference Package" />
+        <ITEM name="$(BDS)\Bin\plugview90.bpl"           value="Pluggable Tree View Package" />
+        <ITEM name="$(BDS)\Bin\asmview90.bpl"            value="Assembly Browser Package" />
+        <ITEM name="$(BDS)\Bin\coreproide90.bpl"         value="Core IDE Pro Package" />
+        <ITEM name="$(BDS)\Bin\IDETools90.bpl"           value="Build Tools" />
+        <ITEM name="$(BDS)\Bin\dbkdebugproide90.bpl"     value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\unittestide90.bpl"        value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\historyide90.bpl"         value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\htmltidy90.bpl"           value="HTML Tidy Formatter" />
+        <ITEM name="$(BDS)\Bin\HTMLFmt90.bpl"            value="HTML Internal Formatter" />
+        <ITEM name="$(BDS)\Bin\mlcc90.bpl"               value="Markup Language Code Completion Package" />
+        <!-- <ITEM name="$(BDS)\Bin\TGIDE90.BPL"              value="Borland Together IDE Integration" /> -->
+        <ITEM name="$(BDS)\Bin\delphivclide90.bpl"       value="Delphi VCL Designer IDE Package" />
+        <ITEM name="$(BDS)\Bin\delphicoreproide90.bpl"   value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\dotnetcoreide90.bpl"      value=".NET Core IDE Package" />
+        <ITEM name="$(BDS)\Bin\dotnetdebugide90.bpl"     value="IDE Debugger Package" />
+        <ITEM name="$(BDS)\Bin\delphidotnetide90.bpl"    value="Delphi for .NET IDE Personality" />
+        <ITEM name="$(BDS)\Bin\vcldotnetdesignide90.bpl" value="VCL for .NET designer IDE Package" />
+      </REG_KEY>
+      <REG_KEY name="3.0\Personalities" delete_tree="false" empty_tree="true">
+        <ITEM name="default"    value="Borland Delphi 2005" />
+        <ITEM name="Delphi.NET" value="Borland Delphi 2005 for the Microsoft .NET Framework" />
+        <!-- For some odd reason, if these two keys do not exist, the splash screen won't display the Delphi.Net icon -->
+        <ITEM name="Delphi.Win32" value="Borland Delphi 2005 for Microsoft Windows"/>
+        <ITEM name="C#Builder" value="Borland C#Builder 2005 for the Microsoft .NET Framework"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Refactoring">
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Delphi.dll"      value="Borland Delphi for .NET Provider"/>
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Refactoring.dll" value="Borland Developer Studio Refactoring"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\dotnetcoreide90.bpl"            value=".Net Core IDE Pro Package"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Unit Testing">
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\Borland.Studio.UnitTest.dll"    value="(Untitled)" />
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\unittestide90.bpl"              value="(Untitled)" />
+        <ITEM name="$(BDS)\Bin\dotnetcoreide90.bpl"            value=".Net Core IDE Pro Package"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Error Insight (Win32 Personality)">
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Delphi.dll"      value="Borland Delphi for .NET Provider"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\delphidotnetide90.bpl"          value="Delphi for .NET IDE Personality" />
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Starteam">
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\Borland.Studio.StarTeam.dll"     value="(Untitled)"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Together Integration">
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\Borland.Studio.Together.dll"      value="Borland Together IDE Integration"/>
+        <ITEM name="$(BDS)\bin\Borland.Together.EcoDiagram.dll"  value="UML Diagram support for Enterprise Core Objects"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\TGIDE90.BPL"                      value="Borland Together IDE Integration"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Caliber IDE Integration">
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\caliberide90.bpl"                 value="(Untitled)"/>
+      </REG_KEY>
+
+    </TEMPLATE>
+    <TEMPLATE name="Borland Exception Package">
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\exceptiondiag90.bpl"  value="(Untitled)"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Crystal Report (.Net only)">
+      <REG_KEY name="3.0\Known IDE Packages" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\crystalide90.bpl"      value="Crystal Decisions IDE Package"/>
+      </REG_KEY>
+    </TEMPLATE>
+
+    <TEMPLATE name="Rave Report">
+      <REG_KEY name="3.0\Known Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\RaveReports\Lib\Nevrona.Rave.Design.dll"      value="Nevrona.Rave.Design"/>
+      </REG_KEY>
+      <REG_KEY name="3.0\Known IDE Assemblies" delete_tree="false" empty_tree="false">
+        <ITEM name="$(BDS)\Bin\BDSRaveReg.dll"      value="Rave Reports BE 6.0"/>
+      </REG_KEY>
+    </TEMPLATE>
+  </BDS3>
+</ROOT>

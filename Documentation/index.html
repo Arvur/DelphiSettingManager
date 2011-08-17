@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Delphi Setting Manager Readme</title>
+</head>
+<body>
+<p><big><big><big><span style="font-weight: bold;">Delphi / C# Builder
+Setting
+Manager</span></big></big></big><br>
+</p>
+<p>Last Update : 07/01/2005.<br>
+Delphi / C#Builder Setting Manager Release 1.2 is released.<br>
+</p>
+<p><big><big>Disclaimer:</big></big></p>
+<p>This utility is a freeware with source and provided as is, use it at
+your own risk.</p>
+<p><big><big>What is Delphi Setting Manager?</big></big></p>
+<p>Delphi / C# Builder Setting Manager (or, Delphi Setting Manager) is
+a utility to manage custom settings for
+Galileo IDEs (Delphi 6, Delphi 7, C#Builder, Delphi 8, and Delphi
+2005). It reads data from the
+HKEY_CURRENT_USER\Software\Borland\BDS\X.X for BDS IDEs, or it reads
+data from HKEY_CURRENT_USER\Software\Delphi\X.X.</p>
+<p>This utility only writes keys and values under
+HKEY_CURRENT_USER\Software\Borland\CustomSettings. The expected
+behavior of this key, you will not be able to alter your default Delphi
+setting,
+and corrupt your default Delphi setting by accident. If this utility
+corrupts or alter the Delphi default setting, that is a bug. Please let
+me know if you found a bug.<br>
+</p>
+<p>The settings for each IDE is stored under
+HKEY_CURRENT_USER\Software\Borland\CustomSettings\&lt;IDE
+Identifier&gt;\&lt;Setting Name&gt;, the File - Save Setting to File
+will create a .reg file of the selected custom setting. The .reg file
+can be imported into different PC using regedit. The .reg file does not
+contain the license key, and authorization code.<br>
+</p>
+<p>I hope you find this utility useful.</p>
+<p>Erwien Saputra<br>
+<a href="http://blogs.slcdug.org/esaputra">http://blogs.slcdug.org/esaputra<br>
+</a><a href="http://www.codeline.net">http://www.codeline.net</a><br>
+</p>
+<p>Downloads:</p>
+<p><a href="http://www.codeline.net/binary/BinaryOnly.zip">Binary Only
+(Release 1.2 - 07/01/2005)</a><br>
+<a href="http://www.codeline.net/binary/SourceOnly.zip">Source only
+download&nbsp; (Release 1.2 - 07/01/2005)</a><br>
+</p>
+<p><big><big>Feature Summary</big></big><br>
+</p>
+<ul>
+  <li>Supports Delphi 6, Delphi 7, Delphi 8, Delphi 2005, and C#Builder.</li>
+  <li>Saves all custom settings under one key.</li>
+  <li>Create shortcut to launch the custom setting.</li>
+  <li>Launch Delphi from within Delphi Setting Manager.<br>
+  </li>
+  <li>Create a new custom setting with the option to use Delphi default
+setting for the new setting.</li>
+  <li>Copy, rename, delete the existing custom setting.</li>
+  <li>Saves a custom setting as a .reg file (License information are
+not saved to the .reg file).</li>
+  <li>Remember the last selected Delphi version and last selected
+custom setting.<br>
+  </li>
+  <li>Edit custom setting, copy, synchronize, or delete keys and values
+between custom setting or with Delphi default setting.</li>
+  <ul>
+    <li>Edit between two custom settings by selecting two custom
+settings and choose Edit.</li>
+    <li>Edit between a custom setting and Delphi default setting by
+setting a custom setting and choose Edit (Delphi default setting is
+read-only).</li>
+    <li>Use right-click (pop-up menu) to access the menu.</li>
+    <li>Different registry values will be displayed in different color.</li>
+  </ul>
+  <li>Create a new custom setting using a set of templates.</li>
+</ul>
+<p><big><big>Thanks</big></big><br>
+</p>
+Thanks to Lachlan Gemmell for the idea and the original code for the
+edit setting functionality.
+http://lachlan.gemmell.com
+<p><big><big>Change Log</big></big></p>
+<big>Delphi Setting Manager 1.2 - 07/01/2005</big><br>
+<p>This version includes support for template. One or more template can
+be
+applied to the new setting. The settings are stored as TEMPLATE.XML.
+There are several pre-defined settings, Barebone for Delphi 7, Delphi
+8, and C# Builder 1.0. Barebone template is useful to create very fast
+text editor with syntax highlighting.<br>
+For Delphi 2005, the available pre-defined templates are Win32,
+Delphi.Net, C#, Refactoring, Unit Testing, Error Insight (Win32
+Personality), Starteam, Together, CaliberRM, Borland Exception package,
+Crystal Report, and Rave Report.<br>
+</p>
+<big>Delphi Setting Manager 1.1 - 03/12/2005</big><br>
+<p>
+This version is released because I think the improvement on the Edit
+Setting will be very helpful. In this version, buttons are available to
+synchronize two settings. Popup menu was not that intuitive. I released
+this because I found a problem with custom settings (not related to
+this utility). Check out my blog for more detail.<br>
+</p>
+<ul>
+  <li>Added buttons to the Edit Setting form.</li>
+</ul>
+<big>Delphi Setting Manager 1.0 - 02/25/2005</big><br>
+<ul>
+  <li>Added keyboard shortcuts for Edit Setting form (Thanks, Jouni
+Aro).</li>
+  <li>Added keyboard shortcuts for the main form.</li>
+  <li>Fixed bug when running setting with spaces.</li>
+  <li>Fixed bug when clearing a name value.<br>
+  </li>
+  <li>Prevent invalid characters creating/renaming/copying a custom
+setting.</li>
+  <li>Replaces invalid character with underscore '_' when saving a
+shortcut and exporting a custom setting to a .reg file.</li>
+  <li>Set main form's Scaled property to false, as workaround for
+desktop with different DPI/font size (Thanks, Michael).</li>
+  <li>Added Edit Setting to the menu.</li>
+  <li>Added minimum size constraint to the main form.</li>
+  <li>Fixed bug that crashed the application when the ini file contains
+invalid information.</li>
+  <li>Known bug / limitation:</li>
+  <ul>
+    <li>The forms for creating new setting, renaming or copying an
+existing setting may not be displayed correctly with desktop with
+desktop with extreme DPI / Font size. There is bug with Delphi form
+when Scaled property is set to true and controls have anchors. <a
+ href="http://qc.borland.com/wc/qcmain.aspx?d=11068">QC: 10068</a>.<br>
+    </li>
+  </ul>
+</ul>
+<big>Delphi Setting Manager 0.9 (beta 3) - 02/16/2005</big><br>
+<ul>
+  <li>Improved features and stability of the edit custom setting
+feature. <br>
+  </li>
+  <ul>
+    <li>Copy registry keys between custom settings or from Delphi
+default setting.</li>
+    <li>Delete custom setting keys.</li>
+    <li>Copy value names between custom settings or from Delphi default
+setting.</li>
+    <li>Delete or clear custom setting value.</li>
+    <li>No more exception. :)</li>
+  </ul>
+</ul>
+<big>Delphi Setting Manager 0.9 (beta) - 01/03/2005</big><br>
+<ul>
+  <li>Added the ability to save a custom setting as a .reg file (the
+license information is removed from the .reg file).<br>
+  </li>
+  <li>Delphi Setting Manager remembers the last selected tab, the last
+selected custom setting, the size and location of the main window.<br>
+  </li>
+  <li>Added the functionality to edit a custom setting using the
+default Delphi configuration as template.</li>
+  <li>Added menu on the form.<br>
+  </li>
+</ul>
+<big>Delphi Setting Manager (beta) - 12/15/2004</big><br>
+<ul>
+  <li>It has the ability to manage custom settings for Delphi 6, Delphi
+7, C#Builder, Delphi 8, and Delphi 2005.</li>
+  <li>It has the ability to create a shortcut to launch Delphi using a
+specific custom setting.</li>
+  <li>It has the ability to launch Delphi using a selected custom
+setting.</li>
+  <li>It has the ability to create a new setting based on the default
+Delphi setting.</li>
+  <li>It has the ability to detect which IDE is installed.</li>
+</ul>
+Main form screen shot:<br>
+<img alt="" src="MainForm.PNG" style="width: 565px; height: 363px;"><br>
+<br>
+Select two custom settings and click edit to synchronize or to edit
+between two settings. Use right click on TreeView and ListBox to access
+the menu.<br>
+<img alt="" src="MultiEdit.PNG" style="width: 550px; height: 370px;"><br>
+<br>
+Copy and delete key values.<br>
+<img alt="" src="EditKey.PNG" style="width: 691px; height: 455px;"><br>
+<br>
+Select one custom setting and click edit to synchronize it with Delphi
+default setting. Delphi default setting will be read-only.<br>
+Look that the values that are different will be displayed in green.<br>
+<img alt="" src="EditNames.PNG" style="width: 720px; height: 522px;"><br>
+<br>
+Use template to easily create a custom setting.<br>
+<img alt="Create a custom setting using templates" src="Template.PNG"
+ style="width: 418px; height: 278px;"><br>
+<br>
+</body>
+</html>
