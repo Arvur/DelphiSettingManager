@@ -380,13 +380,6 @@ begin
   inherited;
   LoadTabs;
 
-  //Workaround for QC #100024. Remove this code and assigns the properties if
-  //the defect has been fixed.
-  btnCreateShortcut.Anchors := [akLeft, akBottom];
-  btnRunDelphi.Anchors      := [akLeft, akBottom];
-  btnClose.Anchors          := [akRight, akBottom];
-  pcInstalledIDE.Anchors    := [akLeft, akRight, akTop, akBottom];
-
   FSettingManagerForm := TSettingManagerForm.Create (self);
   SettingPersistent.GetIniPersistentManager.LoadSetting (FSettingManagerForm);
   SettingTemplate.CreateTemplateCollection (
