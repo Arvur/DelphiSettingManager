@@ -70,7 +70,15 @@ uses
 
 type
   //Enumerated type for all supported Delphi / Galileo based IDEs.
-  TIDEVersion = (Delphi6, Delphi7, BDS1, BDS2, BDS3);
+  TIDEVersion = (Delphi6,
+                 Delphi7,
+                 BDS1 {Borland C# Builder 1},
+                 BDS2 {Borland Delphi 8 for .NET},
+                 BDS3 {Borland Delphi 2005});
+//                 BDS4 {Borland Developer Studio 2006},
+//                 BDS5 {CodeGear Delphi 2007 / 2009},
+//                 BDS6 {Embarcadero RAD Studio 2010},
+//                 BDS8 {Embarcadero RAD Studio XE});
   //Set of TIDEVersion, it is returned by GetInstalledIDEVersion.
   TInstalledIDE = set of TIDEVersion;
 
@@ -126,35 +134,34 @@ implementation
 uses
   Registry, SysUtils, Windows;
 
+type
+  TIDEConstants = record
+    //Registry branch including company name
+    IDERoot: string;
+    //The key of each IDE.
+    RegistryKey: string;
+    //Whenever the IDE is started using -r<RegistryKey> parameter, Delphi/BDS will
+    //create <RegistryKey>\IDE Version, and put all settings under that key, not
+    //directly under the <RegistryKey>.
+    //These constants are useful when the user wants to copy setting from their
+    //existing IDE (the default) to the new custom setting.
+    IDEVersion: string;
+    //Root for all IDE specific settings.
+    SettingsRoot: string;
+  end;
+
 const
-  BORLAND_IDE_ROOT = 'Software\Borland\';
-  //The key of each IDE.
-  DELPHI6_KEY      = BORLAND_IDE_ROOT + 'Delphi\6.0\';
-  DELPHI7_KEY      = BORLAND_IDE_ROOT + 'Delphi\7.0\';
-  BDS1_KEY         = BORLAND_IDE_ROOT + 'BDS\1.0\';
-  BDS2_KEY         = BORLAND_IDE_ROOT + 'BDS\2.0\';
-  BDS3_KEY         = BORLAND_IDE_ROOT + 'BDS\3.0\';
+  IDEParams: array [TIDEVersion] of TIDEConstants = (
+    (IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\6.0\'; IDEVersion: '6.0'; SettingsRoot: 'CustomSettings\Delphi6\'),
+    (IDERoot: 'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion: '7.0'; SettingsRoot: 'CustomSettings\Delphi7\'),
+    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion: '1.0'; SettingsRoot: 'CustomSettings\BDS1\'),
+    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion: '2.0'; SettingsRoot: 'CustomSettings\BDS2\'),
+    (IDERoot: 'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0'; SettingsRoot: 'CustomSettings\BDS3\')
+  );
+
   //The value under IDE key that contains the path and the filename of the
   //executable.
   APP_VALUE        = 'App';
-
-  //Whenever the IDE is started using -r<RegistryKey> parameter, Delphi/BDS will
-  //create <RegistryKey>\IDE Version, and put all settings under that key, not
-  //directly under the <RegistryKey>.
-  //These constants are useful when the user wants to copy setting from their
-  //existing IDE (the default) to the new custom setting.
-  DELPHI6_IDE_VERSION = '6.0';
-  DELPHI7_IDE_VERSION = '7.0';
-  BDS1_IDE_VERSION    = '1.0';
-  BDS2_IDE_VERSION    = '2.0';
-  BDS3_IDE_VERSION    = '3.0';
-
-  //Root for all IDE specific settings.
-  DELPHI6_SETTING = 'CustomSettings\Delphi6\';
-  DELPHI7_SETTING = 'CustomSettings\Delphi7\';
-  BDS1_SETTING    = 'CustomSettings\BDS1\';
-  BDS2_SETTING    = 'CustomSettings\BDS2\';
-  BDS3_SETTING    = 'CustomSettings\BDS3\';
 
 type
   TSettingCollection = class (TInterfacedObject, ISettingCollection)
@@ -178,6 +185,7 @@ type
 
     function GetSettingCount : integer;
     function GetSettingName (Index : integer) : string;
+    function GetIDERoot: string;
     function GetIDEVersion : TIDEVersion;
 
   public
@@ -190,39 +198,27 @@ type
 //Returns the registry key for Galileo based IDEs.
 function GetIDEKey (const AIDEVersion : TIDEVersion) : string;
 begin
-  case AIDEVersion of
-    Delphi6 : Result := DELPHI6_KEY;
-    Delphi7 : Result := DELPHI7_KEY;
-    BDS1    : Result := BDS1_KEY;
-    BDS2    : Result := BDS2_KEY;
-    BDS3    : Result := BDS3_KEY;
-  else
+  try
+    Result := IDEParams[AIDEVersion].IDERoot + IDEParams[AIDEVersion].RegistryKey;
+  except
     raise Exception.Create ('Unknown IDE.');
   end;
 end;
 
 function GetIDEVersionAsString (const AIDEVersion : TIDEVersion) : string;
 begin
-  case AIDEVersion of
-    Delphi6 : Result := DELPHI6_IDE_VERSION;
-    Delphi7 : Result := DELPHI7_IDE_VERSION;
-    BDS1    : Result := BDS1_IDE_VERSION;
-    BDS2    : Result := BDS2_IDE_VERSION;
-    BDS3    : Result := BDS3_IDE_VERSION;
-  else
+  try
+    Result := IDEParams[AIDEVersion].IDEVersion;
+  except
     raise Exception.Create ('Unknown IDE.');
   end;
 end;
 
 function GEtCustomSettingKey (const AIDEVersion : TIDEVersion) : string;
 begin
-  case AIDEVersion of
-    Delphi6 : Result := DELPHI6_SETTING;
-    Delphi7 : Result := DELPHI7_SETTING;
-    BDS1    : Result := BDS1_SETTING;
-    BDS2    : Result := BDS2_SETTING;
-    BDS3    : Result := BDS3_SETTING;
-  else
+  try
+    Result := IDEParams[AIDEVersion].SettingsRoot;
+  except
     raise Exception.Create ('Unknown IDE');
   end;
 end;
@@ -234,23 +230,15 @@ function GetInstalledIDEVersion (out AInstalledIDE : TInstalledIDE) : boolean;
   begin
     Result := SameText (GetExecutablePath (IDEVersion), EmptyStr) = false;
   end;
+
+var
+  Loop: TIDEVersion;
 begin
   AInstalledIDE := [];
 
-  if IDEInstalled (Delphi6) then
-    Include (AInstalledIDE, Delphi6);
-
-  if IDEInstalled (Delphi7) then
-    Include (AInstalledIDE, Delphi7);
-
-  if IDEInstalled (BDS1) then
-    Include (AInstalledIDE, BDS1);
-
-  if IDEInstalled (BDS2) then
-    Include (AInstalledIDE, BDS2);
-
-  if IDEInstalled (BDS3) then
-    Include (AInstalledIDE, BDS3);
+  for Loop := Low (TIDEVersion) to High (TIDEVersion) do
+    if IDEInstalled (Loop) then
+      Include (AInstalledIDE, Loop);
 
   Result := AInstalledIDE <> [];
 end;
@@ -300,7 +288,7 @@ procedure TSettingCollection.AddNewSetting(const SettingName: string;
     const UseDefaultSetting : boolean);
 begin
   Assert (SameText (FReg.CurrentPath,
-                    BORLAND_IDE_ROOT + GetCustomSettingKey (FIDEVersion)));
+                    GetIDERoot + GetCustomSettingKey (FIDEVersion)));
 
   if FReg.KeyExists (SettingName) = true then
     raise Exception.Create ('Setting already exists.');
@@ -333,7 +321,7 @@ procedure TSettingCollection.CopySetting(const SourceName,
   DestName: string);
 begin
   Assert (SameText (FReg.CurrentPath,
-                    BORLAND_IDE_ROOT + GetCustomSettingKey (FIDEVersion)));
+                    GetIDERoot + GetCustomSettingKey (FIDEVersion)));
 
   if (Trim (SourceName) = EmptyStr) then
     raise Exception.Create ('Invalid parameter. Existing setting not defined.');
@@ -360,7 +348,7 @@ begin
   if GetExecutablePath (IDEVersion) = EmptyStr then
     raise Exception.Create ('The desired IDE does not exists.');
 
-  FReg.OpenKey (BORLAND_IDE_ROOT + GetCustomSettingKey (FIDEVersion), true);
+  FReg.OpenKey (GetIDERoot + GetCustomSettingKey (FIDEVersion), true);
 
   LoadSettingNames;
 end;
@@ -393,11 +381,16 @@ end;
 function TSettingCollection.GetCustomRegistryPath(const SettingName: string;
     const IncludeIDEVersionSubKey: boolean = false): string;
 begin
-  Result := BORLAND_IDE_ROOT + GetCustomRegistryKey (SettingName);
+  Result := GetIDERoot + GetCustomRegistryKey (SettingName);
 
   //If the IDE version is required, include it at the end of the string.
   if IncludeIDEVersionSubKey = true then
     Result := Result + '\' + GetIDEVersionAsString (FIDEVersion);
+end;
+
+function TSettingCollection.GetIDERoot: string;
+begin
+  Result := IDEParams[FIDEVersion].IDERoot;
 end;
 
 function TSettingCollection.GetIDEVersion: TIDEVersion;
