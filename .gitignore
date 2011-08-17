@@ -1,0 +1,19 @@
+
+# Delphi binaries
+DCU/
+*.exe
+*.identcache
+
+# Delphi local files
+__history
+*.dproj.local
+*.projdata
+
+# Modeling configuration file
+*.tvsconfig
+
+# GExperts project params
+*.gex
+
+# Settings file
+DelphiSettingManager.ini
