@@ -127,8 +127,7 @@ uses ShellUtilities, LoadSaveCustomSetting, fAbout, SettingTemplate;
 
 const
   //Error message if no IDE is installed in the system.
-  ERR_NO_SUPPORTED_IDE = 'There is no supported Borland IDE installed in this machine. ' +
-                         '(Delphi 6, Delphi 7, C#Builder, Delphi 8).';
+  ERR_NO_SUPPORTED_IDE = 'There is no supported Borland IDE installed in this machine. '#13#10'(%s)';
   //Default form width and height.
   FORM_WIDTH  = 550;
   FORM_HEIGHT = 370;
@@ -171,13 +170,21 @@ var
   InstalledIDE : TInstalledIDE;
   Loop         : TIDEVersion;
   TabLoop      : integer;
+  ErrorString  : string;
 begin
   //If there is no supported IDE installed, display an information dialog and
   //terminate the app.
   //If there is at least one supported IDE installad, InstalledIDE will not be
   //an empty set.
   if GetInstalledIDEVersion (InstalledIDE) = false then begin
-    MessageDlg (ERR_NO_SUPPORTED_IDE, mtInformation, [mbOK], 0);
+    ErrorString := '';
+    for Loop := Low (TIDEVersion) to High (TIDEVersion) do begin
+      if (ErrorString <> '') then
+        ErrorString := ErrorString + ', ';
+      ErrorString := ErrorString + IDEParams[Loop].DisplayName;
+    end;
+    ErrorString := Format(ERR_NO_SUPPORTED_IDE, [ErrorString]);
+    MessageDlg (ErrorString, mtInformation, [mbOK], 0);
     Application.Terminate;
   end
   else begin
