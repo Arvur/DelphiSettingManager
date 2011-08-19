@@ -75,11 +75,11 @@ type
                  BDS1 {Borland C# Builder 1},
                  BDS2 {Borland Delphi 8 for .NET},
                  BDS3 {Borland Delphi 2005},
-//                 BDS4 {Borland Developer Studio 2006},
-//                 BDS5 {CodeGear Delphi 2007},
-//                 BDS6 {CodeGear Delphi 2009},
-//                 BDS7 {Embarcadero RAD Studio 2010},
-                 BDS8 {Embarcadero RAD Studio XE});
+                 BDS4 {Borland Delphi 2006},
+                 BDS5 {CodeGear Delphi 2007},
+                 BDS6 {CodeGear Delphi 2009},
+                 BDS7 {Embarcadero Delphi 2010},
+                 BDS8 {Embarcadero Delphi XE});
   //Set of TIDEVersion, it is returned by GetInstalledIDEVersion.
   TInstalledIDE = set of TIDEVersion;
 
@@ -107,6 +107,10 @@ const
     (DisplayName:  'C# Builder'; ShortName:    'BDS1'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion: '1.0'),
     (DisplayName:    'Delphi 8'; ShortName:    'BDS2'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion: '2.0'),
     (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0'),
+    (DisplayName: 'Delphi 2006'; ShortName:    'BDS4'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\4.0\'; IDEVersion: '4.0'),
+    (DisplayName: 'Delphi 2007'; ShortName:    'BDS5'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\5.0\'; IDEVersion: '5.0'),
+    (DisplayName: 'Delphi 2009'; ShortName:    'BDS6'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\6.0\'; IDEVersion: '6.0'),
+    (DisplayName: 'Delphi 2010'; ShortName:    'BDS7'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\7.0\'; IDEVersion: '7.0'),
     (DisplayName:   'Delphi XE'; ShortName:    'BDS8'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\8.0\'; IDEVersion: '8.0')
   );
 
