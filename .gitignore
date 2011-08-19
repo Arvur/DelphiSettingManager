@@ -6,8 +6,10 @@ DCU/
 
 # Delphi local files
 __history
+*.~*
 *.dproj.local
 *.projdata
+*.dsk
 
 # Modeling configuration file
 *.tvsconfig
