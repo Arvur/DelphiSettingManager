@@ -1,6 +1,7 @@
 program DelphiSettingManager;
 
 {%DelphiDotNetAssemblyCompiler '$(SystemRoot)\microsoft.net\framework\v1.1.4322\system.drawing.dll'}
+{$R *.dres}
 
 uses
   Forms,

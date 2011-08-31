@@ -75,6 +75,7 @@ type
     actAbout: TAction;
     actEditSetting: TAction;
     Edit1: TMenuItem;
+    iLst_IDEs: TImageList;
     procedure actEditSettingExecute(Sender: TObject);
     procedure actAboutExecute(Sender: TObject);
     procedure actSaveSettingExecute(Sender: TObject);
@@ -89,6 +90,7 @@ type
     { Private declarations }
     FSettingManagerForm : TSettingManagerForm;
     function CurrentFrame : TfrmSettingList;
+    procedure LoadIcons;
     procedure CreateTabs;
     procedure LoadTabs;
     procedure SetTab (const IDE : TIDEVersion; const IDEInstalled : boolean);
@@ -139,6 +141,27 @@ const
 
 { TForm1 }
 
+// Load IDE icons from resources
+procedure TfrmMain.LoadIcons;
+var
+  IDELoop : TIDEVersion;
+  tmpIcon : TIcon;
+  PrevIdx : Integer;
+begin
+  PrevIdx := 0;
+  for IDELoop := Low(TIDEVersion) to High(TIDEVersion) do
+    if ((PrevIdx = 0) or (PrevIdx <> IDEParams[IDELoop].IconIndex)) then
+      try
+        PrevIdx := IDEParams[IDELoop].IconIndex;
+        tmpIcon := TIcon.Create;
+        tmpIcon.ReleaseHandle;
+        tmpIcon.Handle := LoadIcon(hInstance, PWideChar(PrevIdx));
+        iLst_IDEs.AddIcon(tmpIcon);
+      finally
+        FreeAndNil(tmpIcon);
+      end;
+end;
+
 // Dynamically creating tabs for all IDEs
 procedure TfrmMain.CreateTabs;
 var
@@ -152,6 +175,7 @@ begin
       newTab.Caption     := IDEParams[IDELoop].DisplayName;
       newTab.Name        := 'tab_' + IDEParams[IDELoop].ShortName;
       newTab.PageControl := pcInstalledIDE;
+      newTab.ImageIndex  := IDEParams[IDELoop].IconIndex - 2;
       newFrame        := TfrmSettingList.Create(Self);
       newFrame.Name   := 'frm_' + IDEParams[IDELoop].ShortName;
       newFrame.Parent := newTab;
@@ -366,6 +390,7 @@ end;
 constructor TfrmMain.Create(AOwner: TComponent);
 begin
   inherited;
+  LoadIcons;
   CreateTabs;
   LoadTabs;
 
@@ -373,6 +398,8 @@ begin
   SettingPersistent.GetIniPersistentManager.LoadSetting (FSettingManagerForm);
   SettingTemplate.CreateTemplateCollection (
       ExtractFilePath (Application.ExeName) + GALILEO_TEMPLATE_NAME);
+
+  Self.Icon.Assign(Application.Icon);
 end;
 
 destructor TfrmMain.Destroy;
@@ -432,4 +459,3 @@ begin
 end;
 
 end.
-
