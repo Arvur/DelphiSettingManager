@@ -276,7 +276,8 @@ begin
   if dlgSave.Execute = true then
     CreateLink (dlgSave.FileName,
                 GetExecutablePath (CurrentFrame.IDEVersion),
-                '-r"' + CurrentFrame.SelectedRegistryKey + '"');
+                '-r"' + CurrentFrame.SelectedRegistryKey + '"' +
+                GetStartParams (CurrentFrame.IDEVersion));
 end;
 
 //Execute the selected IDE, if CurrentFrame is valid and an item is selected.
@@ -287,7 +288,8 @@ begin
     Screen.Cursor := crHourglass;
     try
       RunDelphi (GetExecutablePath (CurrentFrame.IDEVersion),
-                 '-r"' + CurrentFrame.SelectedRegistryKey + '"');
+                 '-r"' + CurrentFrame.SelectedRegistryKey + '"' +
+                 GetStartParams (CurrentFrame.IDEVersion));
     finally
       Screen.Cursor := crArrow;
     end;
