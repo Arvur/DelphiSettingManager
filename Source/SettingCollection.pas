@@ -108,12 +108,12 @@ const
     (DisplayName:    'Delphi 7'; ShortName: 'Delphi7'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion: '7.0'; IconIndex: 3),
     (DisplayName:  'C# Builder'; ShortName:    'BDS1'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion: '1.0'; IconIndex: 4),
     (DisplayName:    'Delphi 8'; ShortName:    'BDS2'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion: '2.0'; IconIndex: 5),
-    (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0'; IconIndex: 5),
-    (DisplayName: 'Delphi 2006'; ShortName:    'BDS4'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\4.0\'; IDEVersion: '4.0'; IconIndex: 5),
-    (DisplayName: 'Delphi 2007'; ShortName:    'BDS5'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\5.0\'; IDEVersion: '5.0'; IconIndex: 5),
-    (DisplayName: 'Delphi 2009'; ShortName:    'BDS6'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\6.0\'; IDEVersion: '6.0'; IconIndex: 5),
-    (DisplayName: 'Delphi 2010'; ShortName:    'BDS7'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\7.0\'; IDEVersion: '7.0'; IconIndex: 6),
-    (DisplayName:   'Delphi XE'; ShortName:    'BDS8'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\8.0\'; IDEVersion: '8.0'; IconIndex: 6)
+    (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion: '3.0'; IconIndex: 6),
+    (DisplayName: 'Delphi 2006'; ShortName:    'BDS4'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\4.0\'; IDEVersion: '4.0'; IconIndex: 6),
+    (DisplayName: 'Delphi 2007'; ShortName:    'BDS5'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\5.0\'; IDEVersion: '5.0'; IconIndex: 6),
+    (DisplayName: 'Delphi 2009'; ShortName:    'BDS6'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\6.0\'; IDEVersion: '6.0'; IconIndex: 6),
+    (DisplayName: 'Delphi 2010'; ShortName:    'BDS7'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\7.0\'; IDEVersion: '7.0'; IconIndex: 7),
+    (DisplayName:   'Delphi XE'; ShortName:    'BDS8'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\8.0\'; IDEVersion: '8.0'; IconIndex: 7)
   );
 
 type
