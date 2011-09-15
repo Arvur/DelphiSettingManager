@@ -26,8 +26,8 @@ type
   TfrmRenameSetting = class(TForm)
     lblOldName: TLabeledEdit;
     lblNewName: TLabeledEdit;
-    btnOK: TBitBtn;
-    btnCancel: TBitBtn;
+    btnOK: TButton;
+    btnCancel: TButton;
     procedure lblNewNameKeyPress(Sender: TObject; var Key: Char);
     procedure lblNewNameChange(Sender: TObject);
   private
@@ -43,6 +43,9 @@ var
   frmRenameSetting: TfrmRenameSetting;
 
 implementation
+
+uses
+  dmGlyphs;
 
 {$R *.dfm}
 const

@@ -67,7 +67,7 @@ type
     lbRightValues: TListBox;
     pnlBottom: TPanel;
     pnlButton: TPanel;
-    btnClose: TBitBtn;
+    btnClose: TButton;
     imgTree: TImageList;
     memValueLeft: TMemo;
     memValueRight: TMemo;
@@ -191,7 +191,7 @@ type
 implementation
 
 uses
-  IntfObserver;
+  IntfObserver, dmGlyphs;
 
 const
   //Captions for the menus.

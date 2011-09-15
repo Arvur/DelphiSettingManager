@@ -33,16 +33,17 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, SettingCollection;
+  Dialogs, StdCtrls, Buttons, SettingCollection, ExtCtrls;
 
 type
   TfrmSettingList = class(TFrame)
     lbSettings: TListBox;
-    btnNew: TBitBtn;
-    btnDelete: TBitBtn;
-    btnRename: TBitBtn;
-    btnCopy: TBitBtn;
-    btnEdit: TBitBtn;
+    btnNew: TButton;
+    btnDelete: TButton;
+    btnRename: TButton;
+    btnCopy: TButton;
+    btnEdit: TButton;
+    pnl_Buttons: TPanel;
     procedure lbSettingsKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure btnEditClick(Sender: TObject);
@@ -94,7 +95,7 @@ type
 
 implementation
 
-uses fNewSetting, fRenameSetting, ShellUtilities, fEditSetting, SettingTemplate;
+uses fNewSetting, fRenameSetting, ShellUtilities, fEditSetting, SettingTemplate, dmGlyphs;
 
 {$R *.dfm}
 

@@ -33,7 +33,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, frmSetting, SettingCollection, Buttons, ActnList,
-  StdActns, Menus, ImgList, SettingPersistent;
+  StdActns, Menus, ImgList, SettingPersistent, ExtCtrls;
 
 type
   TSettingManagerForm = class;
@@ -53,15 +53,14 @@ type
     CreateShortcut1: TMenuItem;
     RunDelphi1: TMenuItem;
     pcInstalledIDE: TPageControl;
-    btnCreateShortcut: TBitBtn;
-    btnClose: TBitBtn;
+    btnCreateShortcut: TButton;
+    btnClose: TButton;
     dlgSave: TSaveDialog;
-    btnRunDelphi: TBitBtn;
+    btnRunDelphi: TButton;
     ActionList: TActionList;
     actFileExit: TFileExit;
     actCreateShortcut: TAction;
     actRunDelphi: TAction;
-    imgList: TImageList;
     actNewSetting: TAction;
     actDeleteSetting: TAction;
     actRenameSetting: TAction;
@@ -76,6 +75,7 @@ type
     actEditSetting: TAction;
     Edit1: TMenuItem;
     iLst_IDEs: TImageList;
+    pnl_Buttons: TPanel;
     procedure actEditSettingExecute(Sender: TObject);
     procedure actAboutExecute(Sender: TObject);
     procedure actSaveSettingExecute(Sender: TObject);
@@ -125,7 +125,7 @@ var
 
 implementation
 
-uses ShellUtilities, LoadSaveCustomSetting, fAbout, SettingTemplate;
+uses ShellUtilities, LoadSaveCustomSetting, fAbout, SettingTemplate, dmGlyphs;
 
 const
   //Error message if no IDE is installed in the system.

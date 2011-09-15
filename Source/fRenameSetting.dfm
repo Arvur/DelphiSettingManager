@@ -1,10 +1,12 @@
 object frmRenameSetting: TfrmRenameSetting
   Left = 477
   Top = 188
-  Width = 460
-  Height = 163
   ActiveControl = lblNewName
+  BorderStyle = bsDialog
+  ClientHeight = 135
+  ClientWidth = 294
   Color = clBtnFace
+  Constraints.MinWidth = 200
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -13,14 +15,14 @@ object frmRenameSetting: TfrmRenameSetting
   OldCreateOrder = False
   Position = poMainFormCenter
   DesignSize = (
-    452
-    129)
+    294
+    135)
   PixelsPerInch = 96
   TextHeight = 13
   object lblOldName: TLabeledEdit
     Left = 8
     Top = 24
-    Width = 437
+    Width = 278
     Height = 21
     TabStop = False
     Anchors = [akLeft, akTop, akRight]
@@ -33,7 +35,7 @@ object frmRenameSetting: TfrmRenameSetting
   object lblNewName: TLabeledEdit
     Left = 8
     Top = 64
-    Width = 437
+    Width = 278
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     EditLabel.Width = 53
@@ -43,22 +45,40 @@ object frmRenameSetting: TfrmRenameSetting
     OnChange = lblNewNameChange
     OnKeyPress = lblNewNameKeyPress
   end
-  object btnOK: TBitBtn
-    Left = 281
-    Top = 96
+  object btnOK: TButton
+    Left = 128
+    Top = 102
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    Default = True
+    DisabledImageIndex = 25
+    DoubleBuffered = True
+    HotImageIndex = 26
+    ImageIndex = 24
+    ImageMargins.Left = 10
+    Images = dm_Glyphs.iLst_Buttons
+    ModalResult = 1
+    ParentDoubleBuffered = False
     TabOrder = 2
-    Kind = bkOK
   end
-  object btnCancel: TBitBtn
-    Left = 369
-    Top = 96
+  object btnCancel: TButton
+    Left = 211
+    Top = 102
     Width = 75
     Height = 25
     Anchors = [akRight, akBottom]
+    Cancel = True
+    Caption = 'Cancel'
+    DisabledImageIndex = 4
+    DoubleBuffered = True
+    HotImageIndex = 5
+    ImageIndex = 3
+    ImageMargins.Left = 5
+    Images = dm_Glyphs.iLst_Buttons
+    ModalResult = 2
+    ParentDoubleBuffered = False
     TabOrder = 3
-    Kind = bkCancel
   end
 end

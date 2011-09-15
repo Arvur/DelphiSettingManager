@@ -59,13 +59,23 @@ object frmAbout: TfrmAbout
     ParentFont = False
     OnClick = lblGemmellComClick
   end
-  object BitBtn1: TBitBtn
-    Left = 200
-    Top = 160
+  object btn_Ok: TButton
+    Left = 196
+    Top = 159
     Width = 75
     Height = 25
+    Cancel = True
+    Caption = 'OK'
+    Default = True
+    DisabledImageIndex = 25
+    DoubleBuffered = True
+    HotImageIndex = 26
+    ImageIndex = 24
+    ImageMargins.Left = 10
+    Images = dm_Glyphs.iLst_Buttons
+    ModalResult = 1
+    ParentDoubleBuffered = False
     TabOrder = 0
-    Kind = bkOK
   end
   object StaticText1: TStaticText
     Left = 8

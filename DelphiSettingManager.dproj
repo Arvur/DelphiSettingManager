@@ -53,6 +53,10 @@
 			<DelphiCompile Include="DelphiSettingManager.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
+			<DCCReference Include="Source\dmGlyphs.pas">
+				<Form>dm_Glyphs</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
 			<DCCReference Include="Source\fMain.pas">
 				<Form>frmMain</Form>
 			</DCCReference>

@@ -23,7 +23,7 @@ uses
 
 type
   TfrmAbout = class(TForm)
-    BitBtn1: TBitBtn;
+    btn_Ok: TButton;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
     lblBlog: TLabel;
@@ -45,7 +45,7 @@ var
 
 implementation
 
-uses ShellUtilities;
+uses ShellUtilities, dmGlyphs;
 
 {$R *.dfm}
 

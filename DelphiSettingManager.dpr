@@ -5,6 +5,7 @@ program DelphiSettingManager;
 
 uses
   Forms,
+  dmGlyphs in 'Source\dmGlyphs.pas' {dm_Glyphs: TDataModule},
   fMain in 'Source\fMain.pas' {frmMain},
   ShellUtilities in 'Source\ShellUtilities.pas',
   SettingCollection in 'Source\SettingCollection.pas',
@@ -27,6 +28,7 @@ uses
 begin
   Application.Initialize;
   Application.Title := 'Delphi Setting Manager';
+  Application.CreateForm(Tdm_Glyphs, dm_Glyphs);
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.

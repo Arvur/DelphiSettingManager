@@ -24,8 +24,8 @@ type
 
   TfrmNewSetting = class(TForm)
     lblSettingName: TLabeledEdit;
-    btnOK: TBitBtn;
-    btnCancel: TBitBtn;
+    btnOK: TButton;
+    btnCancel: TButton;
     cbCopyCurrentIDESetting: TCheckBox;
     clbTemplates: TCheckListBox;
     lblTemplates: TStaticText;
@@ -47,7 +47,11 @@ var
 
 implementation
 
+uses
+  dmGlyphs;
+
 {$R *.dfm}
+
 const
   DEFAULT_SETTING_HINT =
     'Check this if you want to use the default IDE setting to be copied to ' +
