@@ -132,7 +132,7 @@ function GetIniPersistentManager : ISettingPersistentManager;
 implementation
 
 uses
-  SysUtils;
+  SysUtils, ShlObj;
 
 const
   //Supported property types.
@@ -142,11 +142,20 @@ const
 var
   PersistentManager : ISettingPersistentManager;
 
+function GetSpecialFolderPath(FolderID: Integer; CanCreate: Boolean = True): string;
+var
+  FilePath: array [0..MAX_PATH] of Char;
+begin
+  SHGetSpecialFolderPath(0, @FilePath[0], FolderID, CanCreate);
+  Result := IncludeTrailingPathDelimiter(FilePath);
+end;
+
 function GetIniPersistentManager : ISettingPersistentManager;
 begin
   if Assigned (PersistentManager) = false then
     PersistentManager := TIniSettingPersistentManager.Create (
-                             ChangeFileExt (Application.ExeName, '.ini'));
+                             GetSpecialFolderPath(CSIDL_LOCAL_APPDATA) +
+                             ChangeFileExt(ExtractFileName(Application.ExeName), '.ini'));
 
   Result := PersistentManager;
 end;
