@@ -145,7 +145,7 @@
 						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
 						<VersionInfo Name="MajorVer">1</VersionInfo>
 						<VersionInfo Name="MinorVer">3</VersionInfo>
-						<VersionInfo Name="Release">2</VersionInfo>
+						<VersionInfo Name="Release">3</VersionInfo>
 						<VersionInfo Name="Build">0</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">False</VersionInfo>
@@ -158,7 +158,7 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">GalaxyWorks</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription">Delphi Setting Manager</VersionInfoKeys>
-						<VersionInfoKeys Name="FileVersion">1.3.2.0</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.3.3.0</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName">Delphi Setting Manager</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Copyright © Erwien Saputra 2005, Denis Grinyuk 2011</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalTrademarks"/>
@@ -166,7 +166,7 @@
 						<VersionInfoKeys Name="ProductName">Delphi Setting Manager</VersionInfoKeys>
 						<VersionInfoKeys Name="ProductVersion">1.3</VersionInfoKeys>
 						<VersionInfoKeys Name="Comments"/>
-						<VersionInfoKeys Name="Last Compile">2011-09-01 14:06</VersionInfoKeys>
+						<VersionInfoKeys Name="Last Compile">2014-05-07 11:58</VersionInfoKeys>
 					</VersionInfoKeys>
 					<Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
