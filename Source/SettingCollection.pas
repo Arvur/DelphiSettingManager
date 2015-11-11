@@ -70,7 +70,8 @@ uses
 
 type
   //Enumerated type for all supported Delphi / Galileo based IDEs.
-  TIDEVersion = (Delphi6,
+  TIDEVersion = (Delphi5,
+                 Delphi6,
                  Delphi7,
                  BDS1 {Borland C# Builder 1},
                  BDS2 {Borland Delphi 8 for .NET},
@@ -112,21 +113,22 @@ type
 
 const
   IDEParams: array [TIDEVersion] of TIDEConstants = (
-    (DisplayName:    'Delphi 6'; ShortName: 'Delphi6'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\6.0\'; IDEVersion:  '6.0'; IconIndex: 2; UseNP: True),
-    (DisplayName:    'Delphi 7'; ShortName: 'Delphi7'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion:  '7.0'; IconIndex: 3; UseNP: True),
-    (DisplayName:  'C# Builder'; ShortName:    'BDS1'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion:  '1.0'; IconIndex: 4; UseNP: False),
-    (DisplayName:    'Delphi 8'; ShortName:    'BDS2'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion:  '2.0'; IconIndex: 5; UseNP: False),
-    (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion:  '3.0'; IconIndex: 6; UseNP: False),
-    (DisplayName: 'Delphi 2006'; ShortName:    'BDS4'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\4.0\'; IDEVersion:  '4.0'; IconIndex: 6; UseNP: False),
-    (DisplayName: 'Delphi 2007'; ShortName:    'BDS5'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\5.0\'; IDEVersion:  '5.0'; IconIndex: 6; UseNP: False),
-    (DisplayName: 'Delphi 2009'; ShortName:    'BDS6'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\6.0\'; IDEVersion:  '6.0'; IconIndex: 6; UseNP: False),
-    (DisplayName: 'Delphi 2010'; ShortName:    'BDS7'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\7.0\'; IDEVersion:  '7.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:   'Delphi XE'; ShortName:    'BDS8'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\8.0\'; IDEVersion:  '8.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:  'Delphi XE2'; ShortName:    'BDS9'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\9.0\'; IDEVersion:  '9.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:  'Delphi XE3'; ShortName:   'BDS10'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\10.0\'; IDEVersion: '10.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:  'Delphi XE4'; ShortName:   'BDS11'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\11.0\'; IDEVersion: '11.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:  'Delphi XE5'; ShortName:   'BDS12'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\12.0\'; IDEVersion: '12.0'; IconIndex: 7; UseNP: False),
-    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 7; UseNP: False)
+    (DisplayName:    'Delphi 5'; ShortName: 'Delphi5'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\5.0\'; IDEVersion:  '5.0'; IconIndex: 2; UseNP: True),
+    (DisplayName:    'Delphi 6'; ShortName: 'Delphi6'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\6.0\'; IDEVersion:  '6.0'; IconIndex: 3; UseNP: True),
+    (DisplayName:    'Delphi 7'; ShortName: 'Delphi7'; IDERoot:     'Software\Borland\'; RegistryKey: 'Delphi\7.0\'; IDEVersion:  '7.0'; IconIndex: 4; UseNP: True),
+    (DisplayName:  'C# Builder'; ShortName:    'BDS1'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\1.0\'; IDEVersion:  '1.0'; IconIndex: 5; UseNP: False),
+    (DisplayName:    'Delphi 8'; ShortName:    'BDS2'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\2.0\'; IDEVersion:  '2.0'; IconIndex: 6; UseNP: False),
+    (DisplayName: 'Delphi 2005'; ShortName:    'BDS3'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\3.0\'; IDEVersion:  '3.0'; IconIndex: 7; UseNP: False),
+    (DisplayName: 'Delphi 2006'; ShortName:    'BDS4'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\4.0\'; IDEVersion:  '4.0'; IconIndex: 7; UseNP: False),
+    (DisplayName: 'Delphi 2007'; ShortName:    'BDS5'; IDERoot:     'Software\Borland\'; RegistryKey:    'BDS\5.0\'; IDEVersion:  '5.0'; IconIndex: 7; UseNP: False),
+    (DisplayName: 'Delphi 2009'; ShortName:    'BDS6'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\6.0\'; IDEVersion:  '6.0'; IconIndex: 7; UseNP: False),
+    (DisplayName: 'Delphi 2010'; ShortName:    'BDS7'; IDERoot:    'Software\CodeGear\'; RegistryKey:    'BDS\7.0\'; IDEVersion:  '7.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:   'Delphi XE'; ShortName:    'BDS8'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\8.0\'; IDEVersion:  '8.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:  'Delphi XE2'; ShortName:    'BDS9'; IDERoot: 'Software\Embarcadero\'; RegistryKey:    'BDS\9.0\'; IDEVersion:  '9.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:  'Delphi XE3'; ShortName:   'BDS10'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\10.0\'; IDEVersion: '10.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:  'Delphi XE4'; ShortName:   'BDS11'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\11.0\'; IDEVersion: '11.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:  'Delphi XE5'; ShortName:   'BDS12'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\12.0\'; IDEVersion: '12.0'; IconIndex: 8; UseNP: False),
+    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 8; UseNP: False)
   );
 
 type

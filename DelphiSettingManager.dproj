@@ -86,29 +86,33 @@
 			<DCCReference Include="Design Patterns\Subject.pas"/>
 			<DCCReference Include="Source\SettingPersistent.pas"/>
 			<DCCReference Include="Source\SettingTemplate.pas"/>
-			<RcItem Include="Resources\Icons\IDEs\16x16\D6.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\D5.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>2</ResourceId>
 			</RcItem>
-			<RcItem Include="Resources\Icons\IDEs\16x16\D7.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\D6.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>3</ResourceId>
 			</RcItem>
-			<RcItem Include="Resources\Icons\IDEs\16x16\C#.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\D7.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>4</ResourceId>
 			</RcItem>
-			<RcItem Include="Resources\Icons\IDEs\16x16\D8.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\C#.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>5</ResourceId>
 			</RcItem>
-			<RcItem Include="Resources\Icons\IDEs\16x16\BDS3.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\D8.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>6</ResourceId>
 			</RcItem>
-			<RcItem Include="Resources\Icons\IDEs\16x16\BDS7.ico">
+			<RcItem Include="Resources\Icons\IDEs\16x16\BDS3.ico">
 				<ResourceType>ICON</ResourceType>
 				<ResourceId>7</ResourceId>
+			</RcItem>
+			<RcItem Include="Resources\Icons\IDEs\16x16\BDS7.ico">
+				<ResourceType>ICON</ResourceType>
+				<ResourceId>8</ResourceId>
 			</RcItem>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
