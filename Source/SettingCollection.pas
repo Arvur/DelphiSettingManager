@@ -128,7 +128,7 @@ const
     (DisplayName:  'Delphi XE3'; ShortName:   'BDS10'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\10.0\'; IDEVersion: '10.0'; IconIndex: 8; UseNP: False),
     (DisplayName:  'Delphi XE4'; ShortName:   'BDS11'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\11.0\'; IDEVersion: '11.0'; IconIndex: 8; UseNP: False),
     (DisplayName:  'Delphi XE5'; ShortName:   'BDS12'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\12.0\'; IDEVersion: '12.0'; IconIndex: 8; UseNP: False),
-    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 8; UseNP: False)
+    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 9; UseNP: False)
   );
 
 type
