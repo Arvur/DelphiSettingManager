@@ -85,7 +85,10 @@ type
                  BDS10 {Embarcadero Delphi XE3},
                  BDS11 {Embarcadero Delphi XE4},
                  BDS12 {Embarcadero Delphi XE5},
-                 BDS14 {Embarcadero Delphi XE6}
+                 BDS14 {Embarcadero Delphi XE6},
+                 BDS15 {Embarcadero Delphi XE7},
+                 BDS16 {Embarcadero Delphi XE8},
+                 Delphi10 {Embarcadero Delphi 10 Seattle}
                 );
   //Set of TIDEVersion, it is returned by GetInstalledIDEVersion.
   TInstalledIDE = set of TIDEVersion;
@@ -128,7 +131,10 @@ const
     (DisplayName:  'Delphi XE3'; ShortName:   'BDS10'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\10.0\'; IDEVersion: '10.0'; IconIndex: 8; UseNP: False),
     (DisplayName:  'Delphi XE4'; ShortName:   'BDS11'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\11.0\'; IDEVersion: '11.0'; IconIndex: 8; UseNP: False),
     (DisplayName:  'Delphi XE5'; ShortName:   'BDS12'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\12.0\'; IDEVersion: '12.0'; IconIndex: 8; UseNP: False),
-    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 9; UseNP: False)
+    (DisplayName:  'Delphi XE6'; ShortName:   'BDS14'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\14.0\'; IDEVersion: '14.0'; IconIndex: 9; UseNP: False),
+    (DisplayName:  'Delphi XE7'; ShortName:   'BDS15'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\15.0\'; IDEVersion: '15.0'; IconIndex: 9; UseNP: False),
+    (DisplayName:  'Delphi XE8'; ShortName:   'BDS16'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\16.0\'; IDEVersion: '16.0'; IconIndex: 9; UseNP: False),
+    (DisplayName:   'Delphi 10'; ShortName:   'BDS17'; IDERoot: 'Software\Embarcadero\'; RegistryKey:   'BDS\17.0\'; IDEVersion: '19.0'; IconIndex: 9; UseNP: False)
   );
 
 type
